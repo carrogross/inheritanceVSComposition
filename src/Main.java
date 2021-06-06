@@ -10,7 +10,8 @@ public class Main {
     public static void main(String[] args) {
         Inheritance inheritance = new Inheritance();
         Composition composition = new Composition();
-        int numberOfExecutions = 100000000;
+        int startingNumber = 100000000;
+        int numberOfExecutions = startingNumber;
 
         long inheritanceStartTime = System.currentTimeMillis();
         while(numberOfExecutions > 0) {
@@ -19,7 +20,7 @@ public class Main {
         }
         long totalTimeForInheritance = System.currentTimeMillis() - inheritanceStartTime;
 
-        numberOfExecutions = 100000000;
+        numberOfExecutions = startingNumber;
         long compositionStartTime = System.currentTimeMillis();
         while(numberOfExecutions > 0) {
             composition.randomNumber();
