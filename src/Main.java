@@ -3,8 +3,25 @@ public class Main {
 
     public static void main(String[] args) {
         Inheritance inheritance = new Inheritance();
-        inheritance.randomNumber();
         Composition composition = new Composition();
-        composition.randomNumber();
+        int numberOfExecutions = 100000000;
+
+        long inheritanceStartTime = System.currentTimeMillis();
+        while(numberOfExecutions > 0) {
+            inheritance.randomNumber();
+            numberOfExecutions--;
+        }
+        long totalTimeForInheritance = System.currentTimeMillis() - inheritanceStartTime;
+
+        numberOfExecutions = 100000000;
+        long compositionStartTime = System.currentTimeMillis();
+        while(numberOfExecutions > 0) {
+            composition.randomNumber();
+            numberOfExecutions--;
+        }
+        long totalTimeForComposition = System.currentTimeMillis() - compositionStartTime;
+        System.out.println("Total time for Inheritance: " + totalTimeForInheritance + " ms");
+        System.out.println("Total time for Composition: " + totalTimeForComposition + " ms");
+
     }
 }
